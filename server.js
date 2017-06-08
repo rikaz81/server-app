@@ -1,13 +1,3 @@
-// Get dependencies
-//import express from 'express';
-//import bodyParser from 'body-parser'
-//import { VECHICLE_ROUTES } from './routes/vechicle.route'
-//import { USER_ROUTES } from './routes/user.route.'
-
-
-
-//application initialization
-let app = express();
 const express = require('express');
 const path = require('path');
 const http = require('http');
