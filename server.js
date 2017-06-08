@@ -8,8 +8,8 @@ const jwt = require('jsonwebtoken');
 
 console.log('current path',path);
 
-import { VECHICLE_ROUTES } from './routes/vechicle.route'
-import { USER_ROUTES } from './routes/user.route.'
+import { VECHICLE_ROUTES } from './routes/vechicle.route';
+import { USER_ROUTES } from './routes/user.route.';
 
 //const USER_ROUTES = require('./src/routes/user.route.');
 //const VECHICLE_ROUTES = require('./src/routes/vechicle.route');
