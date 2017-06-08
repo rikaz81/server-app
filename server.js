@@ -5,8 +5,11 @@ const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-const USER_ROUTES = require('./routes/user.route.');
-const VECHICLE_ROUTES = require('./routes/vechicle.route');
+
+console.log('current path',path);
+
+const USER_ROUTES = require('./src/routes/user.route.');
+const VECHICLE_ROUTES = require('./src/routes/vechicle.route');
 
 const app = express();
 
