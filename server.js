@@ -10,22 +10,18 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//const dirDist = 'dist/bundle.js';
+
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
-//app.use(express.static('dist'));
-//app.use(express.static(path.join(__dirname, 'src')));
 
 console.log(path.join(__dirname, 'dist'));
-//console.log('dist');
-//console.log(path.join(__dirname, 'src'));
 
 // Catch all other routes and return the index file
 app.get('/*', (req, res) => {
    const index = path.join(__dirname, 'dist', 'bundle.js');   
      	
-  res.sendFile(dirDist);
+  res.sendFile(index);
 });
 
 /**
