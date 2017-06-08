@@ -1,11 +1,10 @@
 // Get dependencies
-import express from 'express';
-import bodyParser from 'body-parser'
-import { VECHICLE_ROUTES } from './routes/vechicle.route'
-import { USER_ROUTES } from './routes/user.route.'
-import mongoose from 'mongoose'
-import jwt from 'jsonwebtoken';
-import { CONFIG } from './config';
+//import express from 'express';
+//import bodyParser from 'body-parser'
+//import { VECHICLE_ROUTES } from './routes/vechicle.route'
+//import { USER_ROUTES } from './routes/user.route.'
+
+
 
 //application initialization
 let app = express();
@@ -13,6 +12,11 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+
+const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+const USER_ROUTES = require('./routes/user.route.');
+const VECHICLE_ROUTES = require('./routes/vechicle.route');
 
 const app = express();
 
