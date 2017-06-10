@@ -129,26 +129,6 @@ __WEBPACK_IMPORTED_MODULE_4_mongoose___default.a.Promise = global.Promise;
 //connect to mongoDB instance created on mongoLabs
 __WEBPACK_IMPORTED_MODULE_4_mongoose___default.a.connect('mongodb://root:root@ds151141.mlab.com:51141/osakamotorsdb');
 
-//skipauthentication temp
-// app.use('/vechicle', (req, res) => {
-//     console.log("something happened");
-//     let token = req.headers['x-access-token'];
-//     // next();
-//     // if (!token) {
-//     //     res.status(401).json({ message: "Not Authorized" });
-//     // } else {
-//     //     jwt.verify(token, CONFIG.secretKey, (err, decoded) => {
-//     //         if (err) {
-//     //             res.status(401).json({ message: "Invalid Token" });
-//     //         } else {
-//     //             req.decoded = decoded;
-//     //             next();
-//     //         }
-//     //     });
-//     // }
-// });
-
-
 app.use('/vechicle', function (req, res, next) {
 
     // Website you wish to allow to connect
@@ -195,14 +175,6 @@ app.use('/user', function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-
-// app.get('/', (req, res) => {
-//     // res.send('Hello World !!!');
-
-//     //Sending JSON Response
-//     res.json({ 'message': 'Hello World' });
-// });
-
 
 app.use('/vechicle', __WEBPACK_IMPORTED_MODULE_2__routes_vechicle_route__["a" /* VECHICLE_ROUTES */]);
 
