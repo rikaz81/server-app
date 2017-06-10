@@ -1,12 +1,15 @@
 //import express from 'express';
 //import bodyParser from 'body-parser'
+//import mongoose from 'mongoose'
+//import jwt from 'jsonwebtoken';
 
 const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-import mongoose from 'mongoose'
-import jwt from 'jsonwebtoken';
+const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+
 
 
 import { VECHICLE_ROUTES } from './routes/vechicle.route'
