@@ -1,16 +1,9 @@
-//import express from 'express';
-//import bodyParser from 'body-parser'
-
-const express = require('express');
-const path = require('path');
-const http = require('http');
-const bodyParser = require('body-parser');
-import mongoose from 'mongoose'
-import jwt from 'jsonwebtoken';
-
-
+import express from 'express';
+import bodyParser from 'body-parser'
 import { VECHICLE_ROUTES } from './routes/vechicle.route'
 import { USER_ROUTES } from './routes/user.route.'
+import mongoose from 'mongoose'
+import jwt from 'jsonwebtoken';
 import { CONFIG } from './config';
 //application initialization
 let app = express();
