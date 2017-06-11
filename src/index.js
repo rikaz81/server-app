@@ -22,7 +22,8 @@ let app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.set('port', 3000);
+//app.set('port', 3000);
+app.set('port', 5000);
 
 mongoose.Promise = global.Promise;
 //connect to mongoDB instance created on mongoLabs

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -98,36 +98,37 @@ module.exports = require("jsonwebtoken");
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_body_parser__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_body_parser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_body_parser__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes_vechicle_route__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes_user_route___ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_mongoose__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_mongoose___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_mongoose__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jsonwebtoken__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jsonwebtoken___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jsonwebtoken__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__config__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__routes_vechicle_route__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_user_route___ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__(2);
+//import express from 'express';
+//import bodyParser from 'body-parser'
+//import mongoose from 'mongoose'
+//import jwt from 'jsonwebtoken';
 
-
-
+var express = __webpack_require__(0);
+var path = __webpack_require__(11);
+var http = __webpack_require__(10);
+var bodyParser = __webpack_require__(9);
+var mongoose = __webpack_require__(1);
+var jwt = __webpack_require__(3);
 
 
 
 
 //application initialization
-var app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
+var app = express();
 
 //enables POST, PUT body data to beretreived as JSON
-app.use(__WEBPACK_IMPORTED_MODULE_1_body_parser___default.a.urlencoded({ extended: true }));
-app.use(__WEBPACK_IMPORTED_MODULE_1_body_parser___default.a.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.set('port', 3000);
+//app.set('port', 3000);
+app.set('port', 5000);
 
-__WEBPACK_IMPORTED_MODULE_4_mongoose___default.a.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 //connect to mongoDB instance created on mongoLabs
-__WEBPACK_IMPORTED_MODULE_4_mongoose___default.a.connect('mongodb://root:root@ds151141.mlab.com:51141/osakamotorsdb');
+mongoose.connect('mongodb://root:root@ds151141.mlab.com:51141/osakamotorsdb');
 
 app.use('/vechicle', function (req, res, next) {
 
@@ -176,9 +177,9 @@ app.use('/user', function (req, res, next) {
     next();
 });
 
-app.use('/vechicle', __WEBPACK_IMPORTED_MODULE_2__routes_vechicle_route__["a" /* VECHICLE_ROUTES */]);
+app.use('/vechicle', __WEBPACK_IMPORTED_MODULE_0__routes_vechicle_route__["a" /* VECHICLE_ROUTES */]);
 
-app.use('/user', __WEBPACK_IMPORTED_MODULE_3__routes_user_route___["a" /* USER_ROUTES */]);
+app.use('/user', __WEBPACK_IMPORTED_MODULE_1__routes_user_route___["a" /* USER_ROUTES */]);
 
 //to run the server
 app.listen(app.get('port'), function () {
@@ -436,6 +437,18 @@ module.exports = require("body-parser");
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports) {
+
+module.exports = require("http");
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports = require("path");
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
